@@ -39,13 +39,96 @@
 
 
     <link href="assets/css/theme.css" rel="stylesheet">
+    <style>
+<? //color scheme options for this template
+$color_accent = $site->option('color');
+ ?>
+.wide .page-section.green .media-object,
+.boxed .page-section.green > .container .media-object {
+    color: #<? echo $color_accent ?>;
+} .section-title small {
+    background-color: #<? echo $color_accent ?>;}
+h1 .fa,
+h2 .fa,
+h3 .fa,
+h4 .fa,
+h5 .fa,
+h6 .fa {
+    color: #<? echo $color_accent ?>;
+}
+.block-title small {
+    color: #<? echo $color_accent ?>;
+}
+.dropcaps {
+    background-color: #<? echo $color_accent ?>;
+}
+a:hover,
+a:active,
+a:focus {
+    color: #<? echo $color_accent ?>;
+}
+.list-ul .fa {
+    color: #<? echo $color_accent ?>;
+}
+.btn-default {
+    background-color: #<? echo $color_accent ?>;
+}
+.price-value {
+    background-color: #<? echo $color_accent ?>;
+}
+.thumbnail.hover,
+.thumbnail:hover {
+    border: solid 0px #<? echo $color_accent ?>;
+}
+.do-hover .caption {
+    background-color: #<? echo $color_accent ?>;
+}
+.projects .do-hover .caption {
+    background-color: #<? echo $color_accent ?>;
+}
 
+.filtrable .current a,
+.filtrable .active a,
+.filtrable .current a:hover,
+.filtrable .active a:hover,
+.filtrable a:hover {
+    border-color: #<? echo $color_accent ?>;
+    background-color: #<? echo $color_accent ?>;
+}
+.feature.style-1:hover .media-object:after,
+.feature.style-1.hover .media-object:after {
+    -webkit-box-shadow: 0 0 0 5px #<? echo $color_accent ?>;
+    box-shadow: 0 0 0 5px #<? echo $color_accent ?>;}
+
+.feature.style-2 .media-object {
+    background-color: #<? echo $color_accent ?>;
+}
+.feature.style-3:hover .media-object,
+.feature.style-3.hover .media-object {
+    background-color: #<? echo $color_accent ?>;
+    border-color: #<? echo $color_accent ?>;
+}
+.feature.style-4 .media-object {
+    background-color: #<? echo $color_accent ?>;
+}
+.feature.style-5 {
+    background-color: #<? echo $color_accent ?>;
+}
+.owl-theme .owl-controls .owl-buttons div,
+.owl-theme .owl-controls .owl-page span {
+    background-color: #<? echo $color_accent ?>;
+}
+.wide .page-section.call-action,
+.boxed .page-section.call-action > .container {
+    background-color: #<? echo $color_accent ?>;
+}
+</style>
     <!--[if lt IE 9]>
     <script src="assets/plugins/html5shiv.js"></script>
     <script src="assets/plugins/respond.min.js"></script>
     <![endif]-->
 </head>
-<?php $fbfeed_path = 'fbfeed';
+<?php $fbfeed_path = 'assets/plugins/fbfeed';
 include $fbfeed_path . '/fbfeed-settings.php'; ?>
 <body class="wide">
 <? //Webgardel theme functionality ?>
@@ -95,6 +178,20 @@ $menu_item6 = '<a href="#'.$menu_li_6.'">'.$menu_li_6.'</a>';
 $menu_item7 = '<a href="#'.$menu_li_7.'">'.$menu_li_7.'</a>';
 $menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_li_8.'</a>';
 
+$fb_prof_pic = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture?type=large" style="max-width:150px; max-height:120px; border-radius:15px;"/>';
+$fb_prof_pic_small = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>';
+
+$albumid = '281475991951856'; //if want a specific album
+$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=12');
+$photos = json_decode($contents,true);
+$photos = $photos['data'];
+
+$get_fb_photo_cover = file_get_contents('https://graph.facebook.com/'.$site->data('fb_id').'?fields=cover');
+$decode_photo_cover = json_decode($get_fb_photo_cover);
+$cover_image = $decode_photo_cover->cover ->source;
+$fb_cover_photo = '<div style="max-height:500px; overflow:hidden;"><img class="rsImg" src="'.$cover_image.'" alt="'.$site->data('company_name').'" /></div>';
+
+
 //end Webgardel theme functionality ?>
 
 
@@ -113,7 +210,7 @@ $menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_
                     <li><? echo $menu_item3; ?></li>
                     <!-- Logo -->
                     <li class="logo">
-                        <a href="./"><img src="<?= $site->data('prof_pic_src') ?>" style="max-width:150px; max-height:120px; border-radius:15px;"/></a>
+                        <a href="./"><? echo $fb_prof_pic ?></a>
                     </li>
                     <!-- /Logo -->
                     <li><? echo $menu_item4; ?></li>
@@ -140,14 +237,7 @@ $menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_
             <div class="container full-width">
                    <div class="flexslider">
                        <ul class="slides">
-                           <li>
-                               <img class="rsImg" src="<?= $site->data('cover_photo1') ?>" alt="image desc" />
-                           </li>
-                           <li>
-                               <img class="rsImg" src="<?= $site->data('cover_photo2') ?>" alt="image desc" />
-                           </li>
-                           <li>
-                               <img class="rsImg" src="<?= $site->data('cover_photo3') ?>" alt="image desc" />
+                           <li><? echo $fb_cover_photo ?>
                            </li>
                        </ul>
                    </div>
@@ -253,10 +343,6 @@ $menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_
             <div class="container projects">
                 <section class="row items no-padding-off">
 <?
-$albumid = '281475991951856';
-$contents = file_get_contents('http://graph.facebook.com/'.$albumid.'/photos?limit=12');
-$photos = json_decode($contents,true);
-$photos = $photos['data'];
 
 foreach ($photos as $row)
 {
@@ -478,25 +564,9 @@ foreach ($photos as $row)
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12" data-animation="fadeInUp" data-animation-delay="300">
                     <div class="widget latest-news">
-                        <h4 class="title">Latest News</h4>
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="assets/img/blog/blog-sidebar-1.jpg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Some news about world</a></h4>
-                                <p class="post-date"><i class="fa fa-calendar"></i> about 5 hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="assets/img/blog/blog-sidebar-2.jpg" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Your News title here</a></h4>
-                                <p class="post-date"><i class="fa fa-calendar"></i> about 5 hours ago</p>
-                            </div>
-                        </div>
+                        <h4 class="title"><?= $site->data('domain_name') ?></h4>
+                                <p><? echo $fb_prof_pic_small; ?><?= $site->content('long_description') ?></p>
+                                <p><strong>Mission:</strong><?= $site->content('mission') ?></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12" data-animation="fadeInUp" data-animation-delay="500">
@@ -543,7 +613,7 @@ foreach ($photos as $row)
         <div class="copyrights">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4"><p>&copy; <?= $site->content('footer_left') ?></p></div>
+                    <div class="col-sm-4"><p>&copy; <?= $site->content('custom_footer') ?></p></div>
                     <div class="col-sm-4">
                         <ul class="list-inline socical-line">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -553,7 +623,7 @@ foreach ($photos as $row)
                             <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-4 contact-info"><p><?= $site->content('footer_right') ?></p></div>
+                    <div class="col-sm-4 contact-info"><p>Powered by www.WebGardel.com</p></div>
                 </div>
             </div>
         </div><!-- /.copyrights -->

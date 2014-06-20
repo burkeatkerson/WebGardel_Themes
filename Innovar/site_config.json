@@ -212,15 +212,10 @@
             "help": 			"This is the email address that the form will be sent to",
             "value": 			"info@webgardel.com"
         },
-        "footer_left": {
-            "friendly": 		"Footer left",
-            "help": 			"The footer at the bottom left of the page",
+        "custom_footer": {
+            "friendly": 		"Custom footer text",
+            "help": 			"The custom footer text at the bottom left of the page usually copyright info.",
             "value": 			"Copyright 2014. All rights reserved."
-        },
-        "footer_right": {
-            "friendly": 		"Footer right",
-            "help":		 	"The footer at the bottom right of the page",
-            "value": 			"Powered by www.WebGardel.com"
         }
     },
 	
@@ -235,13 +230,13 @@
         },
         "color": {
             "friendly": 		"Primary accent color option",
-            "help": 			"The customer has chosen this accent color",
-            "value": 			"#666666"
+            "help": 			"The customer has chosen this accent color. Do NOT use ###numbersign###",
+            "value": 			"E0AF62"
         },
         "color_scheme": {
             "friendly": 		"Color scheme option",
-            "help": 			"Here is shows which color scheme preference they chose",
-            "value": 			"light"
+            "help": 			"They choose between light, dark, and neutral",
+            "value": 			"neutral"
         },
         "font_family": {
             "friendly": 		"Font family option",
