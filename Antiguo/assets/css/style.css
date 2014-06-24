@@ -1,12 +1,9 @@
 /*  
 Theme Name: Antique Theme from the WebGardel Starter
-Theme URI: http://themetrust.com/themes/gather
 Description: WebGardel's Robust Responsive E-commerce Theme
-Version: 0.9.1
+Version: 1.1.1
 Author: Burke Atkerson
 Author URI: http://lienzointernational.com
-
-Tags: e-commerce, portfolio, responsive, blog, clean, minimal, white, two-columns, custom-background, threaded-comments, translation-ready, custom-menus
 
 
 
@@ -438,7 +435,7 @@ a.action {
 }
 
 #header h1 {
-	font-size: 5.1em;	
+	font-size: 3.5em;	
 	color: #fff;	
 	margin: 10px auto;	
 	font-weight: lighter;

@@ -18,7 +18,7 @@ $settings = array(
 
     // Set the Page ID of the Facebook page you want to display below. Make sure to include the quote marks around it.
     // For information on how to find your Page ID go to http://smashballoon.com/custom-facebook-feed/id/
-    'id'                => '191796617614228',
+    'id'                => '681794591894088',
 
     // Is the Facebook feed from a page or a group?
     'pagetype'          => 'page',  // 'page' or 'group'

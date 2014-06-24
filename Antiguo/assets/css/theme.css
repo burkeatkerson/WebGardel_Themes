@@ -2,11 +2,10 @@
 /* CSS Document */
 
 
-	h1, h2, h3, h4, h5, h6 { font-family: 'Abril Fatface'; }
+	h1, h2, h3, h4, h5, h6 { font-family: 'Lato'; }
 
-	body { font-family: 'Old Standard TT';}
-
-	#homeMessage p { font-family: 'Old Standard TT'; }
+	body { font-family: 'Open Sans';}
+	#homeMessage p { font-family: 'Gotham'; }
 
 	.flex-caption h2 {background: #d3a22e!important;}
 	

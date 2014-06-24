@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]--
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
@@ -20,6 +20,39 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/theme.css">
     
+    
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/plugins/isotope/jquery.isotope.min.js"></script>
+<script src="assets/plugins/isotope/jquery.isotope.js"></script>
+<script type="text/javascript" charset="utf-8">
+$(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+
+    <!-- Flexslider -->
+<link rel="stylesheet" href="assets/css/flexslider.css" type="text/css">
+    <link href="assets/plugins/isotope/jquery.isotope.css" rel="stylesheet">
+    
     <!-- google font families -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:regular,italic,bold,bolditalic" />
@@ -28,19 +61,9 @@
     
     <link rel='stylesheet' id='flexslider-css'  href="assets/plugins/flexslider/flexslider.css" type='text/css' media='all' />
     <link rel="stylesheet" href="assets/css/tt_shortcode.css">
+    <link rel="stylesheet" href="assets/css/woocommerce.css">
+    <link rel="stylesheet" href="assets/css/superfish.css">
 
-<!-- Flexslider -->
-<link rel="stylesheet" href="assets/css/flexslider.css" type="text/css">
-    <link href="assets/plugins/isotope/jquery.isotope.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script src="assets/plugins/isotope/jquery.isotope.min.js"></script>
-<script src="assets/plugins/isotope/jquery.isotope.js"></script>
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script>
 <style>
 #header, #mainNav ul ul { background-color: #<?= $site->option('color') ?> !important;	}
 a { color: #<?= $site->option('color') ?>;} <? //import the accent color preference here ?>
@@ -106,7 +129,7 @@ $fb_prof_pic = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/p
 $fb_prof_pic_small = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>';
 
 $albumid = '281475991951856'; //if want a specific album
-$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=11');
+$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=8');
 $photos = json_decode($contents,true);
 $photos = $photos['data'];
 
@@ -136,7 +159,7 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 							<li><? echo $menu_item1; ?></li>
 							<li><? echo $menu_item2; ?></li>
 							<li><? echo $menu_item3; ?></li>
-							<li><? echo $menu_item4; ?></li>
+							<li><? echo $menu_item7; ?></li>
 							<li><? echo $menu_item5; ?></li>
 							<li><? echo $menu_item6; ?></li>
     					</ul>
@@ -151,16 +174,16 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 						</div>
                </div>
 			</div>
-		   <hr style="height: 2px;">
         </div>
 	<?php } //end header navigation module?>
 <?php } //end header section?>
 
 
 
-	<div id="container">
+<div id="container">
+    
+		<?php if( $site->module('cover_photo') ){ //begin cover_photo module  ?>
 		<div id="main" class="clearfix">
-			<?php if( $site->module('cover_photo') ){ //begin cover_photo module  ?>
 			<div class="slideshow" style="margin-bottom:-15px;">
 				<div class="flexslider">		
 					<ul class="slides">
@@ -169,7 +192,6 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
               </div>
 			</div>
        </div>
-		<?php } //end cover_photo module?>
         
         <div id="container-sub">
 	           <div style="float:left;">
@@ -179,19 +201,27 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
                   </ul>   
                </div>
          </div>
+         
+		<?php } //end cover_photo module?>
     
 
 
 
-<?php if( $site->section('about_us') ){ //begin NOSOTROS section?><div id="nosotros"></div><a id="nosotros"></a><br>
+<?php if( $site->section('about_us') ){ //begin NOSOTROS section?><a id="nosotros"></a><br>
 	<div id="container-sub" class="full homeSection clearfix"><br>
     <h2 class="sectionHead"><span>Nosotros</span></h2>
 		<div id="page" class="homeSection clearfix">
 			<div class="prof_pic">
             	<? echo $fb_prof_pic; ?>
            </div>
-         	 <p style="margin-left:60px;"><?= $site->content('short_description') ?></p>
-			<p style="margin-left:60px;"><?= $site->content('long_description') ?></p>
+           <? $long_description = $site->content('long_description');
+									if ($long_description){
+										echo '<p style="margin-left:60px;">'.$long_description.'</p>';
+										} ?> 
+           <? $short_description = $site->content('short_description');
+									if ($long_description){
+										echo '<p style="margin-left:60px;">'.$short_description.'</p>';
+										} ?> 
            
 						<?php if( $site->module('fb_followbox') ){ //begin fb_followbox module  ?>
                 			<div style="float:right; vertical-align:baseline;">
@@ -217,15 +247,27 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 	</div>
 </div>
 <?php } //end nosotros section?>
-<br>
 <?php if( $site->module('contact_info') ){ //begin contact_info module  ?><div id="más info"></div>
 <div class="one_third">
 	<div id="container-sub">
 		<h3>Contacto</h3>
-		<p>Teléfono: <strong><?= $site->data('business_phone') ?> </strong>
-			<br>Celular: <strong><?= $site->data('cell_phone') ?> </strong>
-			<br>Fax: <strong><?= $site->data('fax') ?></strong>
-			<br>Mail: <strong><a href="#contacto"><?= $site->data('business_email') ?></a></strong>
+        <p style="font-size:80%;">
+        <? $business_phone = $site->data('business_phone');
+									if ($business_phone){
+										echo '<br>Teléfono: <strong>'.$business_phone.'</strong>';
+										} ?> 
+			<? $cell_phone = $site->data('cell_phone');
+									if ($cell_phone){
+										echo '<br>Celular: <strong>'.$cell_phone.'</strong>';
+										} ?> 
+			<? $fax = $site->data('fax');
+									if ($fax){
+										echo '<br>Fax: <strong>'.$fax.'</strong>';
+										} ?> 
+			<? $business_email = $site->data('business_email');
+									if ($business_email){
+										echo '<br>Mail: <strong><a href="#contacto">'.$business_email.'</a></strong>';
+										} ?> 
 			<br><a href="#contacto">Contacto directo</a>
 		</p>
 	</div>
@@ -259,35 +301,14 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 </div>
 <?php } //end contact_info module?>
 <div class="homeSection clearfix"></div>
-<br>
-<br>
 
-<?php if( $site->section('photos') ){ //begin FOTOS section?><a id="fotos"></a>
 	<div id="container-sub">
-	    <div id="content" class="fullProjects clearfix full">			
+<?php if( $site->section('photos') ){ //begin FOTOS section?><a id="fotos"></a>
+	    <div id="content" class="fullProjects full">			
 			<h2 class="sectionHead"><span><?= $site->option('photo_section_title') ?></span></h2>
 			<div id="projects" class="clearfix">		
-				
-		
-	
-		<ul id="filterNav" class="clearfix">
-        	<li class="allBtn"><a href="#" data-filter="*" class="selected">All</a></li>
-        		<?
-					foreach ($albums as $row)
-					{
-    					if ($row['type'] == 'normal')
-   						{
-							$photo_album = $row['name'];
-							$photo_album_id = $row['id'];
-							$photo_link = $row['link'];
-							$photo_img = $row['cover_photo'];
-							echo '<li class="thumb wp-post-image"><a href="#" data-filter=".'.$photo_album.'">'.$photo_album.'</a></li>';
-    					}
-					}
-				?>
-		</ul>
         
-	<div class="thumbs masonry isotope">
+			<div class="thumbs masonry isotope">
        <?
 		foreach ($photos as $row)
 		{
@@ -295,19 +316,17 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 			$img_name = $row['name'];
     		echo '<div class="project small lamparas isotope-item" id="project-lampara-moderna">
 						<div class="inside">
-						<a href="'.$img_src.'" rel="bookmark" >	
-							<img src="'.$img_src.'" class="thumb wp-post-image" alt="lampara moderna" title="'.$img_name.'" />		<span class="title"><span>'.$img_name.'</span></span>
-						</a>
+						<img src="'.$img_src.'" class="thumb wp-post-image" alt="lampara moderna" title="'.$img_name.'" />
 						</div>																																
 					</div>	';
 		}
 		?>
-			</div>
-		</div>
+      <div class="homeSection clearfix"></div>
+        <br><br><br>
 <?php } //end fotos section?>
-
+        
 <?php if( $site->section('news') ){ //begin NOVEDADES section?><div id="novedades"></div><a id="novedades"></a>
-<br>
+
 <h2 class="sectionHead"><span>Novedades</span></h2>
 <div class="two_third">
 <?php fbFeed($settings); ?>
@@ -318,11 +337,10 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 			<?php } //end fb_likebox module?>
     </div>
 <?php } //end novedades section?>
-</div>
 <br>
 <br>
 <?php if( $site->module('fb_comments') ){ //begin fb_comments module  ?>
-<br>
+<br><br>
 <h2 class="sectionHead"><span>Commentarios</span></h2>
 	<div style="margin: 0 auto;"><? echo $fb_comments; ?></div>
 <?php } //end fb_comments module?>
@@ -334,8 +352,8 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 <h2 class="sectionHead"><span>Contacto</span></h2>
    
   		<div class="wpcf7" id="wpcf7-f6-o1">
-			<div class="screen-reader-response"></div>
-			<form action="#" method="post" class="wpcf7-form" novalidate>
+		  <div class="screen-reader-response"></div>
+			<form enctype="text/plain" action="mailto:<?= $site->data('business_email') ?>" method="post" class="wpcf7-form" novalidate onSubmit="MM_validateForm('your-name','','R','your-subject','','R','your-message','','R');return document.MM_returnValue">
 			<div style="display: none;">
 			<input type="hidden" name="_wpcf7" value="6" />
 			<input type="hidden" name="_wpcf7_version" value="3.8.1" />
@@ -344,13 +362,13 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 			<input type="hidden" name="_wpnonce" value="bfaf1a4921" />
 			</div>
 			<p>Nombre (required)<br />
-			<span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> </p>
+			<span class="wpcf7-form-control-wrap your-name"><input name="your-name" type="text" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="your-name" value="" size="40" aria-invalid="false" aria-required="true" /></span> </p>
 			<p>Mail (required)<br />
 			    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> </p>
 			<p>Tema<br />
-			    <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" /></span> </p>
+			    <span class="wpcf7-form-control-wrap your-subject"><input name="your-subject" type="text" class="wpcf7-form-control wpcf7-text" id="your-subject" value="" size="40" aria-invalid="false" /></span> </p>
 			<p>Mensaje<br />
-			    <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </p>
+		      <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" id="your-message" aria-invalid="false"></textarea></span> </p>
 			<p><input type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit" /></p>
 			<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
 			<div class="homeSection clearfix">
@@ -361,20 +379,23 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 <?php } //end contact_form module?>
 <?php } //end contacto section?>
 </div>
-            
-</div>
-</div>
+</div>   
+</div> <br>
 	<?php if( $site->section('footer') ){ //begin FOOTER section?><a id="footer"></a>
 	<div id="container">
 	<div id="footer">
+   	<?php if( $site->section('footer_widgets') ){ //begin FOOTER WIDGETS section?>
 		<div class="inside">	
-    	    <?php if( $site->section('footer_widgets') ){ //begin FOOTER WIDGETS section?>
 				<div class="main clearfix">
 					
 					<div class="one_third">
                         <h4 style="font-weight:100;"><?= $site->data('domain_name') ?></h4>
                         <p><?= $site->content('about') ?></p>
-                        <p>Nuestra misión: <?= $site->content('mission') ?></p>
+                        
+        <? $mission = $site->content('mission');
+									if ($mission){
+										echo '<p>Nuestra misión:'.$mission.'</p>';
+										} ?> 
                    </div>
                    <div class="one_third">
                         <? echo $fb_likebox; ?>
@@ -382,18 +403,32 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
                    </div>
 					<div class="one_third last">
 								<h4>Contacto</h4>
-									<p style="font-size:75%; font-weight:200; text-transform:uppercase;">Teléfono: <strong><?= $site->data('business_phone') ?> </strong>
-										<br>Celular: <strong><?= $site->data('cell_phone') ?> </strong>
-										<br>Fax: <strong><?= $site->data('fax') ?></strong>
-										<br>Mail: <strong><a href="#contacto"><?= $site->data('business_email') ?></a>
-                                        </strong>
-									</p>
+									<p style="font-size:75%; font-weight:200; text-transform:uppercase;">
+        <? $business_phone = $site->data('business_phone');
+									if ($business_phone){
+										echo '<br>Teléfono: <strong>'.$business_phone.'</strong>';
+										} ?> 
+			<? $cell_phone = $site->data('cell_phone');
+									if ($cell_phone){
+										echo '<br>Celular: <strong>'.$cell_phone.'</strong>';
+										} ?> 
+			<? $fax = $site->data('fax');
+									if ($fax){
+										echo '<br>Fax: <strong>'.$fax.'</strong>';
+										} ?> 
+			<? $business_email = $site->data('business_email');
+									if ($business_email){
+										echo '<br>Mail: <strong><a href="#contacto">'.$business_email.'</a></strong>';
+										} ?> 
+			<br><a href="#contacto">Contacto directo</a>
+		</p>
 									<p style="font-size:80%; font-weight:200"><strong><?= $site->data('company_name') ?></strong>
 									<br><?= $site->data('address') ?>
 									<br><?= $site->data('address2') ?></p>
            						 <p><a href="http://<?= $site->data('company_name') ?>"><?= $site->data('domain_name') ?></a></p>
                    </div>
            	 </div>
+             </div>
 			<?php } //end footer widgets section?>	
 								
 			<br>
@@ -413,7 +448,6 @@ $fb_cover_photo = '<div style="width:100%; height:280px; background:url('.$cover
 </div><!-- end container -->
 
 <!-- New theme content ends here -->
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="<?php echo $fbfeed_path ?>/core/js/cff.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function () {
