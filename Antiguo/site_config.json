@@ -1,9 +1,9 @@
   {
     "_data": {
        "company_id": 			"use_[region_+_domain]_in_naming_structure",
-		"primary_contact": 	"Sebastian o Pablo",
+		"primary_contact": 		"Sebastian o Pablo",
 		"primary_email":		"primary@email.com",
-		"has_fb_page" :		true ,
+		"has_fb_page" :			true ,
 		"opt_mail_pointing": 	true 
     },
     "data":{
@@ -130,7 +130,7 @@
         "slogan_text": {
             "friendly": 		"Slogan",
             "help": 			"These is the business slogan / Slogan del negocio(10-12 words)",
-            "value": 			"Tu slogan buenisimo"
+            "value": 			"Fabricación propia 100% uruguaya"
         },
         "extra_text": {
             "friendly": 		"Extra text ",
@@ -216,7 +216,7 @@
         "theme": {
             "friendly": 		"Theme",
             "help": 			"This is the theme (and version) the customer has chosen",
-            "value": 			"antiguo_0.9.1"
+            "value": 			"antiguo_1.1.1"
         },
         "color": {
             "friendly": 		"Primary accent color option",
