@@ -1,7 +1,10 @@
-<?php
+<!-- WebGardel Theme : Antiguo_1.1.1 -->
+<?php //webgardel framework files
     include_once('wg_TDK.php');
     include_once('sbwebsite.php');
     $site = new SBWebsite();
+	$fbfeed_path = 'assets/plugins/fbfeed';
+	include $fbfeed_path . '/fbfeed-settings.php'; 
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
@@ -12,7 +15,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $site->data('company_name') ?></title>
+    <title><?= $site->data('company_name') ?> ::: <?= $site->data('domain_name') ?></title>
     <? //Meta tags for Facebook, sharing, and SEO ?>
     <meta property="og:title" content="<?= $site->data('company_name') ?>"/>
 	<meta property="og:image" content="http://graph.facebook.com/<? echo $site->data('fb_id') ?>/picture?type=large"/>
