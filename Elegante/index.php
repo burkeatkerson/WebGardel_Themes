@@ -1,6 +1,10 @@
-<?php
+<!-- WebGardel Theme : Elegante 1.1.1 -->
+<?php //webgardel framework files
+    include_once('wg_TDK.php');
     include_once('sbwebsite.php');
     $site = new SBWebsite();
+	$fbfeed_path = 'assets/plugins/fbfeed';
+	include $fbfeed_path . '/fbfeed-settings.php'; 
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
@@ -11,7 +15,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $site->data('company_name') ?> ::: <?= $site->data('domain_name') ?></title>
+    <title><?= $site->data('company_name') ?></title>
+    <? //Meta tags for Facebook, sharing, and SEO ?>
+    <meta property="og:title" content="<?= $site->data('company_name') ?>"/>
+	<meta property="og:image" content="http://graph.facebook.com/<? echo $site->data('fb_id') ?>/picture?type=large"/>
+	<meta property="og:site_name" content="<?= $site->data('domain_name') ?>"/>
+	<meta property="og:url" content="http://<?= $site->data('domain_name') ?>"/>
+	<meta property="og:description" content="<? echo $site->content('long_description') ?>"/>
+    <meta name="description" content="<?= $site->content('slogan_text') ?>">
+    
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
@@ -47,8 +59,6 @@
 
 
 </head>
-<?php $fbfeed_path = 'assets/plugins/fbfeed';
-include $fbfeed_path . '/fbfeed-settings.php'; ?>
 <body class="wide">
 <? //Webgardel theme functionality ?>
 <script>(function(d, s, id) {
@@ -73,29 +83,7 @@ $fb_sharebutton = '<div class="fb-share-button" data-href="'.$site->data('fb_pag
 $fb_sharebutton_horiz = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="button_count"></div>';
 $fb_comments = '<div class="fb-comments" data-href="http://www.facebook.com/webgardel" data-width="590" data-numposts="12" data-colorscheme="light"></div>';
 $fb_likebox = '<div class="fb-like-box" data-href="'.$site->data('fb_page_url').'" data-width="300" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>';
-$gmaps_iframe = '<iframe src="'.$site->data('gmaps_embed_url').'" width="100%" height="100%" frameborder="0" style="border:0;"></iframe>';
-$menu_li_1 = 'inicio';
-$menu_li_2 = 'nosotros';
-$menu_li_3 = 'contacto';
-$menu_li_4 = 'fotos';
-$menu_li_5 = 'novedades';
-$menu_li_6 = 'más info';
-$menu_li_7 = 'dirección';
-$menu_li_8 = 'página de facebook';
 
-if ($menu_li_1 != 'inicio') {
-	$menu_item1 = '<a href="#'.$menu_li_1.'">'.$menu_li_1.'</a>';
-	}
-	else {
-	$menu_item1 = '<a href="./">'.$menu_li_1.'</a>';
-	}
-$menu_item2 = '<a href="#'.$menu_li_2.'">'.$menu_li_2.'</a>';
-$menu_item3 = '<a href="#'.$menu_li_3.'">'.$menu_li_3.'</a>';
-$menu_item4 = '<a href="#'.$menu_li_4.'">'.$menu_li_4.'</a>';
-$menu_item5 = '<a href="#'.$menu_li_5.'">'.$menu_li_5.'</a>';
-$menu_item6 = '<a href="#'.$menu_li_6.'">'.$menu_li_6.'</a>';
-$menu_item7 = '<a href="#'.$menu_li_7.'">'.$menu_li_7.'</a>';
-$menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_li_8.'</a>';
 
 
 $fb_prof_pic = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture?type=large" style="border-radius:15px;"/>';
@@ -173,11 +161,12 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 		<div id="page" class="homeSection clearfix">
 			<div class="prof_pic">
             	<? echo $fb_prof_pic; ?></div>
-         	 <p style="margin-left:60px;"><?= $site->content('short_description') ?></p>
-			<p style="margin-left:60px;"><?= $site->content('long_description') ?></p>
+         	 
+			<p style="margin-left:80px;"><?= $site->content('long_description') ?></p>
+            <p style="margin-left:60px;"><?= $site->content('short_description') ?></p>
            
 						<?php if( $site->module('fb_followbox') ){ //begin fb_followbox module  ?>
-                			<div style="float:right; vertical-align:baseline;">
+                			<div style="float:left; vertical-align:baseline;">
 							<? echo $fb_followbox_standard; ?>
 							</div>
 						<?php } //end fb_followbox module?>
@@ -204,7 +193,7 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 <div class="one_third">
 	<div id="container-sub" align="center">
 		<h3 align="center">Horario general</h3>
-        <p>lun: <?= $site->content('hours_mon') ?>
+        <p style="font-size:80%;">lun: <?= $site->content('hours_mon') ?>
         <br>mar: <?= $site->content('hours_tue') ?>
         <br>mie: <?= $site->content('hours_wed') ?>
         <br>jue: <?= $site->content('hours_thu') ?>
@@ -218,11 +207,23 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 <div class="one_third">
 	<div id="container-sub">
 		<h3>Contacto</h3>
-		<p>Teléfono: <strong><?= $site->data('business_phone') ?> </strong>
-			<br>Celular: <strong><?= $site->data('cell_phone') ?> </strong>
-			<br>Fax: <strong><?= $site->data('fax') ?></strong>
-			<br>Mail: <strong><a href="#contacto"><?= $site->data('business_email') ?></a></strong>
-			<br><a href="#contacto">Contacto directo</a>
+		<p>
+		<? $business_phone = $site->data('business_phone');
+	if ($business_phone){
+		echo 'Teléfono: <strong>'.$business_phone.'</strong><br>';
+	} ?> 
+<? $cell_phone = $site->data('cell_phone');
+	if ($cell_phone){
+		echo 'Celular: <strong>'.$cell_phone.'</strong><br>';
+	} ?> 
+<? $fax = $site->data('fax');
+	if ($fax){
+		echo 'Fax: <strong>'.$fax.'</strong><br>';
+	} ?> 
+<? $business_email = $site->data('business_email');
+	if ($business_email){
+		echo 'Mail: <a href="#contacto">'.$business_email.'</a>';
+	} ?> 
 		</p>
 	</div>
 </div>
@@ -246,9 +247,6 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 						<?php if( $site->module('fb_likebutton') ){ //begin fb_likebutton module  ?>
                 		<li><? echo $fb_likebutton; ?></li>
 						<?php } //end fb_likebutton module?>
-						<?php if( $site->module('fb_sharebutton') ){ //begin fb_sharebutton module  ?>
-                		<li><? echo $fb_sharebutton; ?></li>
-						<?php } //end fb_sharebutton module?>
 						<?php if( $site->module('fb_followbutton') ){ //begin fb_followbutton module  ?>
                 		<li><? echo $fb_followbutton; ?></li>
 						<?php } //end fb_followbutton module?>
