@@ -1,4 +1,4 @@
-<!-- WebGardel Theme : Elegante 1.1.1 -->
+<!-- WebGardel Theme : Elegante 1.1.1   -->
 <?php //webgardel framework files
     include_once('wg_TDK.php');
     include_once('sbwebsite.php');
@@ -55,8 +55,6 @@
 </script>
 
 
-<!-- end facebook timeline -->
-
 
 </head>
 <body class="wide">
@@ -75,35 +73,6 @@ $('#cff .cff-item').each(function(){
   $cffphoto.detach();
   $self.find('.cff-post-text').before($cffphoto);
 });</script>
-<? $fb_likebutton = '<div class="fb-like" data-href="'.$site->data("fb_page_url").'"  data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>'; 
-$fb_followbox_standard = '<div class="fb-follow" data-href="'.$site->data('fb_page_url').'" data-width="250" data-height="250" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>';
-$fb_followbutton = '<div class="fb-follow" data-href="'.$site->data('fb_page_url').'" data-width="250" data-height="250" data-colorscheme="light" data-layout="button_count" data-show-faces="true"></div>';
-$fb_sharebutton_box_small = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="box_count"></div>';
-$fb_sharebutton = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="button"></div>'; 
-$fb_sharebutton_horiz = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="button_count"></div>';
-$fb_comments = '<div class="fb-comments" data-href="http://www.facebook.com/webgardel" data-width="590" data-numposts="12" data-colorscheme="light"></div>';
-$fb_likebox = '<div class="fb-like-box" data-href="'.$site->data('fb_page_url').'" data-width="300" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>';
-
-
-
-$fb_prof_pic = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture?type=large" style="border-radius:15px;"/>';
-$fb_prof_pic_small = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>';
-
-$albumid = '281475991951856'; //if want a specific album
-$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=11');
-$photos = json_decode($contents,true);
-$photos = $photos['data'];
-
-$get_fb_photo_cover = file_get_contents('https://graph.facebook.com/'.$site->data('fb_id').'?fields=cover');
-$decode_photo_cover = json_decode($get_fb_photo_cover);
-$cover_image = $decode_photo_cover->cover ->source;
-$fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover_image.'); background-position:center top; background-size: cover; overflow:hidden; margin: 0 auto; border-radius: 10px; zoom:1; -ms-background-position-x: center; -ms-background-position-y: top;"></div>';
-
-
-
-
-//end Webgardel theme functionality ?>
-<!-- New theme content begins here -->
 
 <?php if( $site->section('header') ){ //begin HEADER section?><div id="header"></div>
 	<?php if( $site->module('header_navigation') ){ //begin HEADER NAVIGATION module?>
@@ -113,10 +82,10 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
         		<ul class="sf-menu clearfix" >
 					<li><? echo $menu_item1; ?></li>
 					<li><? echo $menu_item2; ?></li>
-					<li><? echo $menu_item3; ?></li>
-					<li><? echo $menu_item4; ?></li>
 					<li><? echo $menu_item5; ?></li>
+					<li><? echo $menu_item7; ?></li>
 					<li><? echo $menu_item6; ?></li>
+					<li><? echo $menu_item3; ?></li>
     			</ul>
 			</div>
 		   <hr style="height: 2px;">
@@ -148,7 +117,7 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 		<div id="main" class="clearfix">
         <?php if( $site->module('cover_photo') ){ //begin cover_photo module  ?>
 			<div class="slideshow">
-				<? echo $fb_cover_photo ?>
+				<? echo $fb_widget['cover_photo']; ?>
 			</div>
 		<?php } //end cover_photo module?>
 
@@ -160,14 +129,14 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 	<div class="full homeSection clearfix">	<br>
 		<div id="page" class="homeSection clearfix">
 			<div class="prof_pic">
-            	<? echo $fb_prof_pic; ?></div>
+            	<? echo $fb_widget['prof_pic']; ?></div>
          	 
 			<p style="margin-left:80px;"><?= $site->content('long_description') ?></p>
             <p style="margin-left:60px;"><?= $site->content('short_description') ?></p>
            
 						<?php if( $site->module('fb_followbox') ){ //begin fb_followbox module  ?>
                 			<div style="float:left; vertical-align:baseline;">
-							<? echo $fb_followbox_standard; ?>
+							<? echo $fb_widget['followbox_standard']; ?>
 							</div>
 						<?php } //end fb_followbox module?>
                       
@@ -245,10 +214,10 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 							<div id="container-sub" class="float" align="center" style="margin:20px;">
                	<ul id="fb_buttons_box">
 						<?php if( $site->module('fb_likebutton') ){ //begin fb_likebutton module  ?>
-                		<li><? echo $fb_likebutton; ?></li>
+                		<li><? echo $fb_widget['likebutton']; ?></li>
 						<?php } //end fb_likebutton module?>
 						<?php if( $site->module('fb_followbutton') ){ //begin fb_followbutton module  ?>
-                		<li><? echo $fb_followbutton; ?></li>
+                		<li><? echo $fb_widget['followbutton']; ?></li>
 						<?php } //end fb_followbutton module?>
                   </ul>
     	    	</div>
@@ -320,7 +289,7 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 </div>
 	<div class="one_third last">
     		<?php if( $site->module('fb_likebox') ){ //begin fb_likebox module  ?>
-				<? echo $fb_likebox; ?>
+				<? echo $fb_widget['likebox']; ?>
 			<?php } //end fb_likebox module?>
     </div>
 <?php } //end novedades section?>
@@ -329,7 +298,7 @@ $fb_cover_photo = '<div style="width:100%; height:400px; background:url('.$cover
 <br>
 <?php if( $site->module('fb_comments') ){ //begin fb_comments module  ?>
 <br><h2>Commentarios</h2>
-	<div style="margin: 0 auto;"><? echo $fb_comments; ?></div>
+	<div style="margin: 0 auto;"><? echo $fb_widget['comments']; ?></div>
 <?php } //end fb_comments module?>
  
 

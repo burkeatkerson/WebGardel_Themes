@@ -29,7 +29,7 @@ $fb_widget = array(
 	'comments' 				=>	'<div class="fb-comments" data-href="http://www.facebook.com/'.$fb_id.'" data-width="590" data-numposts="12" data-colorscheme="light"></div>',
 	'likebox' 				=>	'<div class="fb-like-box" data-href="http://www.facebook.com/'.$fb_id.'" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>',
 	'likebox_tall' 			=>	'<div class="fb-like-box" data-href="http://www.facebook.com/'.$fb_id.'" data-width="300" data-height="650" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>',
-	'cover_photo'			=> '<div style="width:100%; height:350px; background:url('.$cover_image.'); background-position:center top; background-size: cover; overflow:hidden; margin: -20px auto 0 auto; zoom:1; -ms-background-position-x: center; -ms-background-position-y: top;"></div>',
+	'cover_photo'			=> '<div style="width:100%; height:400px; background:url('.$cover_image.'); background-position:center top; background-size: cover; overflow:hidden; margin: 0 auto; border-radius: 10px; zoom:1; -ms-background-position-x: center; -ms-background-position-y: top;"></div>',
 	'prof_pic'				=> '<img src="http://graph.facebook.com/'. $fb_id .'/picture?type=large" style="border-radius:15px;"/>',
 	'prof_pic_custom'		=> '<img src="http://graph.facebook.com/'. $fb_id .'/picture?type=large" style="max-width:150px; max-height:120px; border-radius:15px;"/>',
 	'prof_pic_small'		=>	'<img src="http://graph.facebook.com/'. $fb_id .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>'
