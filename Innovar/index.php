@@ -1,9 +1,11 @@
 <!-- WebGardel Theme : Innovar -->
 
-<?php
+<?php //webgardel framework files
+    include_once('wg_TDK.php');
     include_once('sbwebsite.php');
     $site = new SBWebsite();
-	
+	$fbfeed_path = 'assets/plugins/fbfeed';
+	include $fbfeed_path . '/fbfeed-settings.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $site->data('company_name') ?> ::: <?= $site->data('domain_name') ?></title>
+    <title><?= $site->data('company_name') ?></title>
 
 
     <!-- Favicons -->
@@ -40,9 +42,6 @@
 
     <link href="assets/css/theme.css" rel="stylesheet">
     <style>
-<? //color scheme options for this template
-$color_accent = $site->option('color');
- ?>
 .wide .page-section.green .media-object,
 .boxed .page-section.green > .container .media-object {
     color: #<? echo $color_accent ?>;
@@ -127,9 +126,9 @@ a:focus {
     <script src="assets/plugins/html5shiv.js"></script>
     <script src="assets/plugins/respond.min.js"></script>
     <![endif]-->
+    
+<?php ?>
 </head>
-<?php $fbfeed_path = 'assets/plugins/fbfeed';
-include $fbfeed_path . '/fbfeed-settings.php'; ?>
 <body class="wide">
 <? //Webgardel theme functionality ?>
 <script>(function(d, s, id) {
@@ -146,53 +145,7 @@ $('#cff .cff-item').each(function(){
   $cffphoto.detach();
   $self.find('.cff-post-text').before($cffphoto);
 });</script>
-<? $fb_likebutton = '<div class="fb-like" data-href="'.$site->data('fb_page_url').'"  data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>'; 
-$fb_followbox_standard = '<div class="fb-follow" data-href="'.$site->data('fb_page_url').'" data-width="250" data-height="250" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>';
-$fb_followbutton = '<div class="fb-follow" data-href="'.$site->data('fb_page_url').'" data-width="250" data-height="250" data-colorscheme="light" data-layout="button_count" data-show-faces="true"></div>';
-$fb_sharebutton_box_small = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="box_count"></div>';
-$fb_sharebutton = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="button"></div>'; 
-$fb_sharebutton_horiz = '<div class="fb-share-button" data-href="'.$site->data('fb_page_url').'" data-type="button_count"></div>';
-$fb_comments = '<div class="fb-comments" data-href="http://www.facebook.com/webgardel" data-width="590" data-numposts="12" data-colorscheme="light"></div>';
-$fb_likebox = '<div class="fb-like-box" data-href="'.$site->data('fb_page_url').'" data-width="300" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>';
-$gmaps_iframe = '<iframe src="'.$site->data('gmaps_embed_url').'" width="100%" height="100%" frameborder="0" style="border:0;"></iframe>';
-$menu_li_1 = 'inicio';
-$menu_li_2 = 'nosotros';
-$menu_li_3 = 'contacto';
-$menu_li_4 = 'fotos';
-$menu_li_5 = 'novedades';
-$menu_li_6 = 'más info';
-$menu_li_7 = 'dirección';
-$menu_li_8 = 'página de facebook';
 
-if ($menu_li_1 != 'inicio') {
-	$menu_item1 = '<a href="#'.$menu_li_1.'">'.$menu_li_1.'</a>';
-	}
-	else {
-	$menu_item1 = '<a href="./">'.$menu_li_1.'</a>';
-	}
-$menu_item2 = '<a href="#'.$menu_li_2.'">'.$menu_li_2.'</a>';
-$menu_item3 = '<a href="#'.$menu_li_3.'">'.$menu_li_3.'</a>';
-$menu_item4 = '<a href="#'.$menu_li_4.'">'.$menu_li_4.'</a>';
-$menu_item5 = '<a href="#'.$menu_li_5.'">'.$menu_li_5.'</a>';
-$menu_item6 = '<a href="#'.$menu_li_6.'">'.$menu_li_6.'</a>';
-$menu_item7 = '<a href="#'.$menu_li_7.'">'.$menu_li_7.'</a>';
-$menu_item8 = '<a href="'.$site->data('fb_page_url').'" target="_blank">'.$menu_li_8.'</a>';
-
-$fb_prof_pic = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture?type=large" style="max-width:150px; max-height:120px; border-radius:15px;"/>';
-$fb_prof_pic_small = '<img src="http://graph.facebook.com/'. $site->data('fb_id') .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>';
-
-$albumid = '281475991951856'; //if want a specific album
-$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=12');
-$photos = json_decode($contents,true);
-$photos = $photos['data'];
-
-$get_fb_photo_cover = file_get_contents('https://graph.facebook.com/'.$site->data('fb_id').'?fields=cover');
-$decode_photo_cover = json_decode($get_fb_photo_cover);
-$cover_image = $decode_photo_cover->cover ->source;
-$fb_cover_photo = '<div style="max-height:500px; overflow:hidden;"><img class="rsImg" src="'.$cover_image.'" alt="'.$site->data('company_name').'" /></div>';
-
-
-//end Webgardel theme functionality ?>
 
 
 <!-- Wrap all content -->
@@ -210,11 +163,11 @@ $fb_cover_photo = '<div style="max-height:500px; overflow:hidden;"><img class="r
                     <li><? echo $menu_item3; ?></li>
                     <!-- Logo -->
                     <li class="logo">
-                        <a href="./"><? echo $fb_prof_pic ?></a>
+                        <a href="./"><? echo $fb_widget['prof_pic_custom'];?></a>
                     </li>
                     <!-- /Logo -->
                     <li><? echo $menu_item4; ?></li>
-                    <li><? echo $menu_item8; ?></li>
+                    <li><? echo $menu_item7; ?></li>
                     <li><? echo $menu_item6; ?></li>
                 </ul><!-- /.sf-menu -->
             </nav><!-- /.navigation -->
@@ -256,7 +209,7 @@ $fb_cover_photo = '<div style="max-height:500px; overflow:hidden;"><img class="r
             <p data-animation="fadeInRight" data-animation-delay="100"><?= $site->content('slogan_text') ?></p>
             <h1 data-animation="fadeInLeft" data-animation-delay="300"><?= $site->data('company_name') ?></h1>
             <p data-animation="fadeInRight" data-animation-delay="500"><?= $site->content('long_description') ?></p>
-            <p data-animation="fadeInRight" data-animation-delay="700"><? echo $fb_sharebutton_horiz; ?></p>
+            <p data-animation="fadeInRight" data-animation-delay="700"><? echo $fb_widget['sharebutton_horiz']; ?></p>
         </div>
     </section>
         
@@ -406,10 +359,10 @@ foreach ($photos as $row)
                	<div class="col-md-8">
 						<?php fbFeed($settings); //facebook feed, nodevades, MURO, timeline ?>  
              		</div>
-                  <div class="col-md-4" style="float:right;"><? echo $fb_likebox; ?>
+                  <div class="col-md-4" style="float:right;"><? echo $fb_widget['likebox_tall']; ?>
                   </div>
                   <div class="clearfix"></div>
-                  <? echo $fb_comments; ?>
+                  <? echo $fb_widget['comments']; ?>
              </div>
         </section>
         <?php } //end novedades section?>
@@ -513,7 +466,8 @@ foreach ($photos as $row)
                                 <li><i class="fa-li fa fa-envelope"></i><a href="mailto:"<?= $site->data('business_email') ?>"><?= $site->data('business_email') ?></a></li>
                                 <li><i class="fa-li fa fa-map-marker"></i><?= $site->data('domain_name') ?></li>
                             </ul>
-                            <? echo $gmaps_iframe; ?>
+                            <div style="height:175px;">
+                            <? echo $gmaps_iframe; ?></div>
                            
                             </address>
                         </div>

@@ -1,5 +1,5 @@
 <?php
-    include_once('wg_SDK.php');
+    include_once('wg_TDK.php');
     include_once('sbwebsite.php');
     $site = new SBWebsite();
 ?>
