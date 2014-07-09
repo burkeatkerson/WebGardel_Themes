@@ -1,4 +1,4 @@
-<!-- WebGardel Theme : Innovar -->
+<!-- WebGardel Theme : La Uruguayita Lucia 1.1.1 -->
 
 <?php //webgardel framework files
     include_once('wg_TDK.php');

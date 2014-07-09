@@ -1,4 +1,4 @@
-<!-- WebGardel Theme : Elegante 1.1.1   -->
+<!-- WebGardel Theme : Palomita Blanca 1.1.1   -->
 <?php //webgardel framework files
     include_once('wg_TDK.php');
     include_once('sbwebsite.php');
