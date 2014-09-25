@@ -1,7 +1,7 @@
   {
     "_data": {
        "company_id": 			"use_[region_+_domain]_in_naming_structure",
-		"primary_contact": 		"Sebastian o Pablo",
+		"primary_contact": 		"Residencial",
 		"primary_email":		"primary@email.com",
 		"has_fb_page" :			true ,
 		"opt_mail_pointing": 	true 
@@ -10,22 +10,22 @@
         "company_name": {
             "friendly": 		"Company Name / Nombre de negocio",
             "help": 			"This is the name of your company",
-            "value": 			"Don Batu Equipamientos"
+            "value": 			"Residencial TATA LUIS"
         },
         "domain_name": {
             "friendly": 		"Domain Name / Dominio",
             "help": 			"This is the domain name of your website",
-            "value": 			"www.donbatuequipamientos.com"
+            "value": 			"www.residenciatataluis.com"
         },
         "fb_page_url": {
             "friendly": 		"Facebook page url",
             "help": 			"This is the facebook page for the company. Facebook.com/... ",
-            "value": 			"https://www.facebook.com/pages/DON-BATU-Equipamientos/681794591894088"
+            "value": 			"https://www.facebook.com/pages/Hogar-para-Adultos-Mayores-TATA-LUIS/667555939998266"
         },
         "address": {
             "friendly": 		"Addreess / Direccion y esquina",
             "help": 			"This is the primary business adress",
-            "value": 			"Gral flores 2741 esquina colorado"
+            "value": 			"Carabelas 3535 esq. Erlich"
         },
         "address2": {
             "friendly": 		"City, state, zip, country / ciudad, barrio, departamento, numero, pais",
@@ -35,7 +35,7 @@
         "business_phone": {
             "friendly": 		"Business phone / telefono de negocio",
             "help": 			"This is the business phone number",
-            "value": 			"2208-4983"
+            "value": 			"093-451-024"
         },
         "cell_phone": {
             "friendly": 		"Cell phone / telefono celular",
@@ -50,12 +50,12 @@
         "business_email": {
             "friendly": 		"Business email / mail para el negocio",
             "help": 			"This is the business email",
-            "value": 			"donbatuequipamientos@gmail.com"
+            "value": 			"residenciatataluis@gmail.com"
         },
         "gmaps_embed_url": {
             "friendly": 		"Google maps embed URL",
             "help": 			"Only paste the url in the iframe not the entire code",
-            "value": 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6546.296891822667!2d-56.18019290000009!3d-34.877618499999706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f806ca771b96b%3A0xb4cd12e4564bc144!2sAv+Gral+Flores+2741!5e0!3m2!1sen!2s!4v1403630358200"
+            "value": 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13095.381783886234!2d-56.1798611!3d-34.8601106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDUxJzM2LjQiUyA1NsKwMTAnNDcuNSJX!5e0!3m2!1sen!2s!4v1407265975872"
         },
 		
 		
@@ -67,7 +67,7 @@
         "fb_id": {
             "friendly": 		"Facebook page id",
             "help": 			"This is the facebook page id number. Automate or use http://findmyfacebookid.com/",
-            "value": 			"681794591894088"
+            "value": 			"667555939998266"
         },
         "fb_public": {
             "friendly": 		"Facebook page set to public",
@@ -110,27 +110,27 @@
         "mission": {
             "friendly": 		"Mission Statement",
             "help": 			"Vision or Mission statement",
-            "value": 			""
+            "value": 			"Nuestra principal misión es el bienestar del adulto mayor, con los mejores recursos humanos, con equipos multidisciplinarios y técnicos, que conjuntamente con nuestra infraestructura edilicia le brindaremos el máximo confort, se sentirá contenido física y emocionalmente."
         },
         "about": {
             "friendly": 		"About me / Nosotros",
             "help": 			"Vision or Mission statement",
-            "value": 			"Nuestro local ubicado en la zona histórica de muebles con fabricación propia 100% uruguaya! Somos una empresa familiar atendida por sus propios dueños brindando calidad, honestidad, garantía, compromiso y una atención personalizada! no dejes de visitarnos en la calle Gral Flores 2741 esq Colorado Montevideo."
+            "value": 			"En nuestro hogar lo importante es el ser humano y nos comprometemos a que tu estancia aquí, sea tan agradable como esperas."
         },
         "short_description": {
             "friendly": 		"Short description",
             "help": 			"Short Business description",
-            "value": 			""
+            "value": 			"En nuestro HOGAR lo importante es la persona, el ser humano, cada uno individualmente y nos comprometemos a tener todos los medios humanos y técnicos para que la estancia aquí, sea tan agradable como esperas."
         },
         "long_description": {
             "friendly": 		"Long description / historia",
             "help": 			"Business description (our brief story. 1 paragraph) / Nosotros",
-            "value": 			"Nuestro local ubicado en la zona histórica de muebles con fabricación propia 100% uruguaya! Somos una empresa familiar atendida por sus propios dueños brindando calidad, honestidad, garantía, compromiso y una atención personalizada! no dejes de visitarnos en la calle Gral Flores 2741 esq Colorado Montevideo."
+            "value": 			"Hablarle a un adulto mayor acerca de salir de su propio hogar dispara todas sus alarmas. Por esto es que les brindamos una opción para planear un futuro digno y seguro."
         },
         "slogan_text": {
             "friendly": 		"Slogan",
             "help": 			"These is the business slogan / Slogan del negocio(10-12 words)",
-            "value": 			"Fabricación propia 100% uruguaya"
+            "value": 			"Lo importante es el ser humano"
         },
         "extra_text": {
             "friendly": 		"Extra text ",
@@ -221,7 +221,7 @@
         "color": {
             "friendly": 		"Primary accent color option",
             "help": 			"The customer has chosen this accent color. Do not include ###numbersign###",
-            "value": 			"1c273c"
+            "value": 			"45b812"
         },
         "color_scheme": {
             "friendly": 		"Color scheme option",
@@ -236,7 +236,7 @@
         "photo_section_title": {
             "friendly": 		"Fotos o Productos",
             "help": 			"Here it draws in the names of the ablums as categories.",
-            "value": 			"productos"
+            "value": 			"Fotos"
         },
         "primary_language": {
             "friendly": 		"Primary Language option",
@@ -265,7 +265,7 @@
         "photos": {
             "friendly": 		"Photos or products / fotos o productos",
             "help": 			"This determines of if you want the photos section to show",
-            "value": 			false
+            "value": 			true
         },
         "news": {
             "friendly": 		"News / Novedades",
@@ -329,7 +329,7 @@
         "hours": {
             "friendly": 		"Business Hours / horario",
             "help": 			"This determines of if you want the open hours section to show",
-            "value": 			true
+            "value": 			false
         },
         "contact_info": {
             "friendly": 		"Contact info/ info de contacto",

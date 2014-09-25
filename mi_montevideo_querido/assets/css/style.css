@@ -180,17 +180,6 @@ blockquote {
 	background: transparent url(images/quote.png) no-repeat;	
 }
 
-code {
-    font-family: "Courier New", Courier, serif;
-	overflow: auto;
-	padding: 2px;
-	background: #fff;
-}
-
-pre code {
-	background: none;
-}
-
 pre {
     margin: 0 0 20px;
 	padding: 10px;
@@ -284,7 +273,6 @@ a.action {
 #container {	
 	max-width: 62.5em;
 	margin: 0 auto;
-	background:fff;
 }
 
 	
@@ -455,7 +443,10 @@ a.action {
 
 #mainNav{	
 	right: 3%;	
-	position:absolute; top:1em; height:20px; margin-top:-10px;	
+	position:absolute; 
+	top:1em;
+	height:20px; 
+	margin-top:-10px;	
 	font-family: Helvetica, arial, sans-serif;	
 	z-index: 300;
 }
@@ -463,7 +454,8 @@ a.action {
 .sf-menu li, #mainNav li{
 	margin: 0 0 0 1.5em;	
 	display: inline-block;		
-	padding: 0;	
+	padding: 0;
+	text-transform:uppercase;
 }
 
 .sf-menu a, #mainNav ul a{
@@ -1002,7 +994,7 @@ a.button, #footer a.button {
 }
 
 #content #filterNav li{
-	padding: 0px 0 0 0;
+	padding: 0 0 0 0;
 	background: none;
 	margin: 0 5px 5px 0;	
 	display: block;

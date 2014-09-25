@@ -8,13 +8,14 @@
 
 $fb_id = $site->data('fb_id');
 $albumid = '281475991951856'; //if want a specific album
-$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=12');
+$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?fields=album,link,name,images,source&limit=12');
 $photos = json_decode($contents,true);
 $photos = $photos['data'];
 
 $get_fb_photo_cover = file_get_contents('https://graph.facebook.com/'.$site->data('fb_id').'?fields=cover');
 $decode_photo_cover = json_decode($get_fb_photo_cover);
 $cover_image = $decode_photo_cover->cover ->source;
+$cover_image_offset = $decode_photo_cover->cover ->offset_y;
 $fb_cover_photo = '<div style="max-height:500px; overflow:hidden;"><img class="rsImg" src="'.$cover_image.'" alt="'.$site->data('company_name').'" /></div>';
 
 
@@ -29,7 +30,7 @@ $fb_widget = array(
 	'comments' 				=>	'<div class="fb-comments" data-href="http://www.facebook.com/'.$fb_id.'" data-width="590" data-numposts="12" data-colorscheme="light"></div>',
 	'likebox' 				=>	'<div class="fb-like-box" data-href="http://www.facebook.com/'.$fb_id.'" data-width="300" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>',
 	'likebox_tall' 			=>	'<div class="fb-like-box" data-href="http://www.facebook.com/'.$fb_id.'" data-width="300" data-height="650" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>',
-	'cover_photo'			=> '<div style="width:100%; height:280px; background:url('.$cover_image.'); background-position:center top; background-size: cover; overflow:hidden; margin: -20px auto 0 auto; zoom:1; -ms-background-position-x: center; -ms-background-position-y: top;"></div>',
+	'cover_photo'			=> '<div style="width:100%; height:350px; background:url('.$cover_image.'); background-position:center top; background-size: cover; overflow:hidden; margin: 0 auto 0 auto; zoom:0; background-position:0% '.$cover_image_offset.'%; -ms-background-position-x: center; -ms-background-position-y: '.$cover_image_offset.'%;"></div>',
 	'prof_pic'				=> '<img src="http://graph.facebook.com/'. $fb_id .'/picture?type=large" style="border-radius:15px;"/>',
 	'prof_pic_custom'		=> '<img src="http://graph.facebook.com/'. $fb_id .'/picture?type=large" style="max-width:150px; max-height:120px; border-radius:15px;"/>',
 	'prof_pic_small'		=>	'<img src="http://graph.facebook.com/'. $fb_id .'/picture" style="border-radius:5px; float:left; margin:5px 15px 5px 0;"/>'
@@ -45,7 +46,7 @@ $settings = array(
     'access_token' => 'OPTIONAL_ACCESS_TOKEN_HERE',
     // Is the Facebook feed from a page or a group?
     'pagetype'          => 'page',  // 'page' or 'group'
-    'layout' 			=> 'half',
+    'layout' 			=> 'thumb',
     'number' 			=> '5',
 	'limit' 				=> '8',
 	'width' 				=> '100%',
