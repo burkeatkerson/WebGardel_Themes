@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+	h1, h2, h3, h4, h5, h6 { font-family: 'Lato'; }
+
+	body { font-family: 'Open Sans';}
+	#homeMessage p { font-family: 'Gotham'; }
+
+	.flex-caption h2 {background: #d3a22e!important;}
+	
+	#homeSlideshow .preloading span {background: #d3a22e;}
+	#fancybox-close:hover {background: #d3a22e;}
+	span.onsale {background: #d3a22e !important;}
+	.product .price	{color: #d3a22e !important;}
+
+#header .inside .top p, .sf-menu a, #mainNav ul a, .sf-menu li.sfHover ul a, #mainNav ul li.sfHover ul a { color: #dddddd !important;	}
+
+	#mainNav ul li.current a,
+	#mainNav ul li.current-cat a,
+	#mainNav ul li.current_page_item a,
+	#mainNav ul li.current-menu-item a,
+	#mainNav ul li.current-post-ancestor a,	
+	.single-post #mainNav ul li.current_page_parent a,
+	#mainNav ul li.current-category-parent a,
+	#mainNav ul li.current-category-ancestor a,
+	#mainNav ul li.current-portfolio-ancestor a,
+	#mainNav ul li.current-projects-ancestor a {
+		color: #ffffff !important;		
+	}
+	.sf-menu li a:hover,
+	#mainNav ul li.sfHover a,
+	#mainNav ul li a:hover,
+	#mainNav ul li:hover {
+		color: #ffffff !important;	
+	}
+	.sf-menu li.sfHover ul a:hover, #mainNav ul li.sfHover ul a:hover { color: #ffffff !important;}	
+
+
+a:hover {color: #555555;}
+a.button, .widget_price_filter .button, .cart .button, #searchsubmit, input[type="submit"], button {background-color: #424242 !important;}
+.button:hover, .widget_price_filter .button:hover, .cart .button:hover, #searchsubmit:hover, input[type="submit"]:hover, button:hover {background-color: #595959 !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+	

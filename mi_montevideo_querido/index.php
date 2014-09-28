@@ -61,6 +61,16 @@ function MM_validateForm() { //v4.0
     document.MM_returnValue = (errors == '');
 } }
 </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52327937-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
     <!-- Flexslider -->
 <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css">
@@ -116,10 +126,10 @@ $('#cff .cff-item').each(function(){
         				<ul class="sf-menu clearfix" >
 							<li><? echo $menu_item1; ?></li>
 							<li><? echo $menu_item2; ?></li>
-							<li><? echo $menu_item5; ?></li>
-							<li><? echo $menu_item4; ?></li>
-							<li><? echo $menu_item7; ?></li>
 							<li><? echo $menu_item3; ?></li>
+							<li><? echo $menu_item7; ?></li>
+							<li><? echo $menu_item5; ?></li>
+							<li><? echo $menu_item6; ?></li>
     					</ul>
                    </div>
                </div>
@@ -173,13 +183,13 @@ $('#cff .cff-item').each(function(){
 			<div class="prof_pic">
             	<? echo $fb_widget['prof_pic']; ?>
            </div>
-           <? $short_description = $site->content('short_description');
-									if ($short_description){
-										echo '<p style="margin-left:60px;">'.$short_description.'</p>';
-										} ?> 
            <? $long_description = $site->content('long_description');
 									if ($long_description){
 										echo '<p style="margin-left:60px;">'.$long_description.'</p>';
+										} ?> 
+           <? $short_description = $site->content('short_description');
+									if ($long_description){
+										echo '<p style="margin-left:60px;">'.$short_description.'</p>';
 										} ?> 
            
 						<?php if( $site->module('fb_followbox') ){ //begin fb_followbox module  ?>
@@ -230,7 +240,6 @@ $('#cff .cff-item').each(function(){
 			<br><a href="#contacto">Contacto directo</a>
 		</p>
 	</div>
-    <?php if( $site->module('hours') ){ //begin hours module  ?>
 	<div id="container-sub" align="center">
 		<h3 align="center">Horario general</h3>
         <p>lun: <?= $site->content('hours_mon') ?>
@@ -241,8 +250,8 @@ $('#cff .cff-item').each(function(){
         <br>sab: <?= $site->content('hours_sat') ?>
         <br>dom: <?= $site->content('hours_sun') ?>
         </p>
+        	
 	</div>
-	<?php } //end hours module?>
 </div>
 
 
@@ -263,6 +272,27 @@ $('#cff .cff-item').each(function(){
 <div class="homeSection clearfix"></div>
 
 	<div id="container-sub">
+<?php if( $site->section('photos') ){ //begin FOTOS section?><a id="fotos"></a>
+	    <div id="content" class="fullProjects full">			
+			<h2 class="sectionHead"><span><?= $site->option('photo_section_title') ?></span></h2>
+			<div id="projects" class="clearfix">		
+        
+			<div class="thumbs masonry isotope">
+       <?
+		foreach ($photos as $row)
+		{
+			$img_src = $row['images'][1]['source'];
+			$img_name = $row['name'];
+    		echo '<div class="project small lamparas isotope-item" id="project-lampara-moderna">
+						<div class="inside">
+						<img src="'.$img_src.'" class="thumb wp-post-image" alt="lampara moderna" title="'.$img_name.'" />
+						</div>																																
+					</div>	';
+		}
+		?>
+      <div class="homeSection clearfix"></div>
+        <br><br><br>
+<?php } //end fotos section?>
         
 <?php if( $site->section('news') ){ //begin NOVEDADES section?><div id="novedades"></div><a id="novedades"></a>
 
@@ -278,49 +308,12 @@ $('#cff .cff-item').each(function(){
 <?php } //end novedades section?>
 <br>
 <br>
-
-<?php if( $site->section('photos') ){ //begin FOTOS section?><a id="fotos"></a>
-	    <div id="content" class="fullProjects full">			
-			<h3 class="sectionHead"><span><?= $site->option('photo_section_title') ?></span></h3>
-			<div id="projects" class="clearfix">		
-        
-			<div class="thumbs masonry isotope">
-       <?
-		foreach ($photos as $row)
-		{
-
-			$img_src = $row['images'][1]['source'];
-			$img_name = $row['name'];
-			$img_link = $row['link'];
-			$img_album_name = $row['album']['name'];
-			if ($img_album_name == 'Cover Photos')
-				continue;
-			if ($img_album_name == 'Profile Pictures')
-				continue;
-    		echo '<div class="project small lamparas isotope-item" id="project-lampara-moderna">
-						<div class="inside">
-							<a href="'.$img_link.'">
-							<img src="'.$img_src.'" class="thumb wp-post-image" alt="'.$img_album_name.'" title="'.$img_name.'" /></a>
-							<p>'.$img_name.'</p>
-						</div>																																
-				  </div>	';
-
-		}
-		?>
-        </div></div></div>
-      <div class="homeSection clearfix"></div>
-        <br><br><br>
-<?php } //end fotos section?>
-
-
 <?php if( $site->module('fb_comments') ){ //begin fb_comments module  ?>
 <br><br>
 <h2 class="sectionHead"><span>Comentarios</span></h2>
 	<div style="margin: 0 auto;"><? echo $fb_widget['comments']; ?></div>
 <?php } //end fb_comments module?>
  
-
-
 
 
 <?php if( $site->section('contact') ){ //begin CONTACTO section?><a id="contacto"></a>
@@ -366,12 +359,12 @@ $('#cff .cff-item').each(function(){
 					
 					<div class="one_third">
                         <h4 style="font-weight:100;"><?= $site->data('domain_name') ?></h4>
+                        <p><?= $site->content('about') ?></p>
                         
         <? $mission = $site->content('mission');
 									if ($mission){
-										echo '<p>'.$mission.'</p>';
-										} ?>
-										
+										echo '<p>Nuestra misión:'.$mission.'</p>';
+										} ?> 
                    </div>
                    <div class="one_third">
                         <? echo $fb_widget['likebox']; ?>

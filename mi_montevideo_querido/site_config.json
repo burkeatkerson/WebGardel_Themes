@@ -1,7 +1,7 @@
   {
     "_data": {
-       "company_id": 			"use_[region_+_domain]_in_naming_structure",
-		"primary_contact": 		"Residencial",
+       "company_id": 			"CID#",
+		"primary_contact": 		"Default",
 		"primary_email":		"primary@email.com",
 		"has_fb_page" :			true ,
 		"opt_mail_pointing": 	true 
@@ -10,32 +10,32 @@
         "company_name": {
             "friendly": 		"Company Name / Nombre de negocio",
             "help": 			"This is the name of your company",
-            "value": 			"Residencial TATA LUIS"
+            "value": 			"________________"
         },
         "domain_name": {
             "friendly": 		"Domain Name / Dominio",
             "help": 			"This is the domain name of your website",
-            "value": 			"www.residenciatataluis.com"
+            "value": 			"________________"
         },
         "fb_page_url": {
             "friendly": 		"Facebook page url",
             "help": 			"This is the facebook page for the company. Facebook.com/... ",
-            "value": 			"https://www.facebook.com/pages/Hogar-para-Adultos-Mayores-TATA-LUIS/667555939998266"
+            "value": 			"https://www.facebook.com/pages/________________________"
         },
         "address": {
-            "friendly": 		"Addreess / Direccion y esquina",
+            "friendly": 		"Addreess / Direccion",
             "help": 			"This is the primary business adress",
-            "value": 			"Carabelas 3535 esq. Erlich"
+            "value": 			"____________________________"
         },
         "address2": {
-            "friendly": 		"City, state, zip, country / ciudad, barrio, departamento, numero, pais",
+            "friendly": 		"Corner, esquina, pais, etc",
             "help": 			"This is 2nd address line",
-            "value": 			"Montevideo, Uruguay"
+            "value": 			"____________________________"
         },
         "business_phone": {
             "friendly": 		"Business phone / telefono de negocio",
             "help": 			"This is the business phone number",
-            "value": 			"093-451-024"
+            "value": 			"____________________________"
         },
         "cell_phone": {
             "friendly": 		"Cell phone / telefono celular",
@@ -50,12 +50,12 @@
         "business_email": {
             "friendly": 		"Business email / mail para el negocio",
             "help": 			"This is the business email",
-            "value": 			"residenciatataluis@gmail.com"
+            "value": 			"____________________________"
         },
         "gmaps_embed_url": {
             "friendly": 		"Google maps embed URL",
             "help": 			"Only paste the url in the iframe not the entire code",
-            "value": 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13095.381783886234!2d-56.1798611!3d-34.8601106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDUxJzM2LjQiUyA1NsKwMTAnNDcuNSJX!5e0!3m2!1sen!2s!4v1407265975872"
+            "value": 			"https://www.google.com/maps/embed?____________________________"
         },
 		
 		
@@ -67,7 +67,7 @@
         "fb_id": {
             "friendly": 		"Facebook page id",
             "help": 			"This is the facebook page id number. Automate or use http://findmyfacebookid.com/",
-            "value": 			"667555939998266"
+            "value": 			"____________________________"
         },
         "fb_public": {
             "friendly": 		"Facebook page set to public",
@@ -76,13 +76,13 @@
         },
         "cover_photo2": {
             "friendly": 		"Second Cover Photo",
-            "help": 			"This is the url of the second cover photo",
-            "value": 			"http://webgardel.com/demo2/wp-content/uploads/2014/05/header02.jpg"
+            "help": 			"This is the url of the second cover photo. optional",
+            "value": 			""
         },
         "cover_photo3": {
             "friendly": 		"Third Cover Photo",
-            "help": 			"This is the url of the third cover photo",
-            "value": 			"http://webgardel.com/demo2/wp-content/uploads/2014/05/header03.jpg"
+            "help": 			"This is the url of the third cover photo. optional",
+            "value": 			""
         },
         "price_range": {
             "friendly": 		"General price range",
@@ -92,7 +92,7 @@
         "product_list": {
             "friendly": 		"Third Cover Photo",
             "help": 			"This is the price range imported from facebook",
-            "value": 			"Gastronomia internacional y montevideana. Especialidad en chivitos, pizzetas y postres."
+            "value": 			""
         }
     },
 	
@@ -110,97 +110,97 @@
         "mission": {
             "friendly": 		"Mission Statement",
             "help": 			"Vision or Mission statement",
-            "value": 			"Nuestra principal misión es el bienestar del adulto mayor, con los mejores recursos humanos, con equipos multidisciplinarios y técnicos, que conjuntamente con nuestra infraestructura edilicia le brindaremos el máximo confort, se sentirá contenido física y emocionalmente."
+            "value": 			"____________________________"
         },
         "about": {
             "friendly": 		"About me / Nosotros",
             "help": 			"Vision or Mission statement",
-            "value": 			"En nuestro hogar lo importante es el ser humano y nos comprometemos a que tu estancia aquí, sea tan agradable como esperas."
+            "value": 			""
         },
         "short_description": {
             "friendly": 		"Short description",
             "help": 			"Short Business description",
-            "value": 			"En nuestro HOGAR lo importante es la persona, el ser humano, cada uno individualmente y nos comprometemos a tener todos los medios humanos y técnicos para que la estancia aquí, sea tan agradable como esperas."
+            "value": 			"____________________________"
         },
         "long_description": {
             "friendly": 		"Long description / historia",
             "help": 			"Business description (our brief story. 1 paragraph) / Nosotros",
-            "value": 			"Hablarle a un adulto mayor acerca de salir de su propio hogar dispara todas sus alarmas. Por esto es que les brindamos una opción para planear un futuro digno y seguro."
+            "value": 			"____________________________"
         },
         "slogan_text": {
             "friendly": 		"Slogan",
             "help": 			"These is the business slogan / Slogan del negocio(10-12 words)",
-            "value": 			"Lo importante es el ser humano"
+            "value": 			"____________________________"
         },
         "extra_text": {
             "friendly": 		"Extra text ",
             "help": 			"This is an extra text box in case the user wants to add some extra information",
-            "value": 			"Text flexible. If you need extra info on your page or perhaps a welcome text, hereitis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque felis non nisl ultrices eu consectetur dolor suscipit."
+            "value": 			""
         },
         "extra_text_headline": {
             "friendly": 		"Welcome text Title",
             "help": 			"This is the title for the extra text box",
-            "value": 			"Extra Title"
+            "value": 			""
         },
         "hours_mon": {
             "friendly": 		"Monday open hours",
             "help": 			"El horario general de lunes",
-            "value": 			"10:00 - 16:00"
+            "value": 			"Exxample: 10:00 - 16:00"
         },
         "hours_tue": {
             "friendly": 		"Tuesday open hours",
             "help": 			"El horario general de martes",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "hours_wed": {
             "friendly": 		"Wednesday open hours",
             "help": 			"El horario general de miercoles",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "hours_thu": {
             "friendly": 		"Thurs open hours",
             "help": 			"El horario general de jueves",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "hours_fri": {
             "friendly": 		"Friday open hours",
             "help": 			"El horario general de viernes",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "hours_sat": {
             "friendly": 		"Saturday open hours",
             "help": 			"El horario general de sab",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "hours_sun": {
             "friendly": 		"Sunday open hours",
             "help": 			"El horario general de domingo",
-            "value": 			"10:00 - 16:00"
+            "value": 			"____________________________"
         },
         "cta_headline": {
             "friendly": 		"Call-to-action headline",
             "help": 			"These are your open hours",
-            "value": 			"Lporiem epsum text."
+            "value": 			""
         },
         "cta_lead": {
             "friendly": 		"Call-to-action lead",
             "help": 			"This is the lead text describing the unique value proposition",
-            "value": 			"Latin text description of the call to action!"
+            "value": 			""
         },
         "cta_hero": {
             "friendly": 		"Call-to-action hero shot",
             "help": 			"This is the image url for the call-to-action",
-            "value": 			"http://webgardel.com/img/logo.png"
+            "value": 			""
         },
         "cta_button": {
             "friendly": 		"Call-to-action button",
             "help": 			"This is the official call-to-action button",
-            "value": 			"Tengo interes"
+            "value": 			""
         },
         "cta_email": {
             "friendly": 		"Call-to-action email",
             "help": 			"This is the email address that the form will be sent to",
-            "value": 			"info@webgardel.com"
+            "value": 			""
         },
         "custom_footer": {
             "friendly": 		"Custom footer text",
@@ -216,12 +216,12 @@
         "theme": {
             "friendly": 		"Theme",
             "help": 			"This is the theme (and version) the customer has chosen",
-            "value": 			"antiguo_1.1.1"
+            "value": 		    "____________________________"
         },
         "color": {
             "friendly": 		"Primary accent color option",
-            "help": 			"The customer has chosen this accent color. Do not include ###numbersign###",
-            "value": 			"45b812"
+            "help": 			"The customer has chosen this accent color. Use hex number (6 digits) without #sign. Do not include ###numbersign###",
+            "value": 		    "cc533a"
         },
         "color_scheme": {
             "friendly": 		"Color scheme option",
@@ -231,11 +231,11 @@
         "font_family": {
             "friendly": 		"Font family option",
             "help": 			"Here it shows what they chose between the font_family options we gave them.",
-            "value": 			"business"
+            "value": 			""
         },
         "photo_section_title": {
             "friendly": 		"Fotos o Productos",
-            "help": 			"Here it draws in the names of the ablums as categories.",
+            "help": 			"Here it draws in the names of the ablums as categories. Recommended Fotos or Productos",
             "value": 			"Fotos"
         },
         "primary_language": {
@@ -354,7 +354,7 @@
         "call_to_action": {
             "friendly": 		"Call to action / invitacion para interactuar",
             "help": 			"This determines of if you want the call-to-action section to show",
-            "value": 			true
+            "value": 			false
         },
         "services": {
             "friendly": 		"Services / servicios",

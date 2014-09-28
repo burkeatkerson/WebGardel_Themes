@@ -8,7 +8,7 @@
 
 $fb_id = $site->data('fb_id');
 $albumid = '281475991951856'; //if want a specific album
-$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?fields=album,link,name,images,source&limit=12');
+$contents = file_get_contents('http://graph.facebook.com/'.$site->data('fb_id').'/photos/uploaded?limit=12');
 $photos = json_decode($contents,true);
 $photos = $photos['data'];
 
@@ -46,11 +46,10 @@ $settings = array(
     'access_token' => 'OPTIONAL_ACCESS_TOKEN_HERE',
     // Is the Facebook feed from a page or a group?
     'pagetype'          => 'page',  // 'page' or 'group'
-    'layout' 			=> 'thumb',
+    'layout' 			=> 'half',
     'number' 			=> '5',
 	'limit' 				=> '8',
 	'width' 				=> '100%',
-	'showpostsby'	 	=> 'others',
 	'eventsource' 		=> 'timeline',
 	'eventimage' 		=> 'full',
 	'datepos' 			=> 'above',
